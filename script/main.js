@@ -12,11 +12,13 @@ var quantitaNumeri = 5;
 var randomArray = [];
 var winner = [];
 
-
-while (randomArray.length < quantitaNumeri) {
+var i = 0;
+while (i < quantitaNumeri) {
   var numeroRandom = Math.floor(Math.random() * max) + min;
-  if (!randomArray.includes(numeroRandom));
-    randomArray.push(numeroRandom);
+  if (!randomArray.includes(numeroRandom)) {
+    (randomArray).push(numeroRandom);
+    i++;
+  }
 }
 alert(randomArray);
 
@@ -32,6 +34,7 @@ function faseUno() {
   numeriUser.push(dgtNumber);
   }
 
+  // confronto i due array. Creo un terzo array in cui inserire i numeri uguali che poi mostrerò all'utente
   for (var i = 0; i < randomArray.length; i++) {
     if(randomArray[i] === numeriUser[i]) {
       winner.push(numeriUser[i]);
@@ -39,16 +42,9 @@ function faseUno() {
   }
   console.log(winner);
   alert('i numeri indovinati sono: ' + winner);
-  alert('hai indovinato' + winner.length + 'numeri')
-
-
+  alert('hai indovinato ' + winner.length + ' numeri')
 }
-
-
-
 
 
 console.log('numeri utente', numeriUser);
 console.log('numeri computer', randomArray);
-
-// confronto i due array. Creo un terzo array in cui inserire i numeri uguali che poi mostrerò all'utente
