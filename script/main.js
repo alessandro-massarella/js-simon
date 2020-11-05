@@ -39,6 +39,7 @@ function faseUno() {
   }
   console.log(winner);
   alert('i numeri indovinati sono: ' + winner);
+  alert('hai indovinato' + winner.length + 'numeri')
 
 
 }
