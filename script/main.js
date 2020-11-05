@@ -10,6 +10,8 @@ var max = 10;
 
 var quantitaNumeri = 5;
 var randomArray = [];
+var winner = [];
+
 
 while (randomArray.length < quantitaNumeri) {
   var numeroRandom = Math.floor(Math.random() * max) + min;
@@ -18,17 +20,34 @@ while (randomArray.length < quantitaNumeri) {
 }
 alert(randomArray);
 
+
+
+setTimeout (faseUno, 3000);
+
 var numeriUser = [];
 
-
-setTimeout (myFunction, 3000);
-
-function myFunction() {
+function faseUno() {
   for (var i = 0; i < 5; i++) {
   var dgtNumber = parseInt(prompt('inserisci i numeri UNO alla volta'));
   numeriUser.push(dgtNumber);
   }
+
+  for (var i = 0; i < randomArray.length; i++) {
+    if(randomArray[i] === numeriUser[i]) {
+      winner.push(numeriUser[i]);
+    }
+  }
+  console.log(winner);
+  alert('i numeri indovinati sono: ' + winner);
+
+
 }
+
+
+
+
 
 console.log('numeri utente', numeriUser);
 console.log('numeri computer', randomArray);
+
+// confronto i due array. Creo un terzo array in cui inserire i numeri uguali che poi mostrerò all'utente
